@@ -1,6 +1,6 @@
 import unittest
 
-from Solution import solution
+from Solution import solution, solution_in_reverse_order
 from Implementation import implementation
 
 class TestInsertionSort(unittest.TestCase):
@@ -8,6 +8,13 @@ class TestInsertionSort(unittest.TestCase):
     numbers_to_sort = [10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1, 1]
     expected = [1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]
     actual = solution(numbers_to_sort)
+
+    self.assertEqual(actual, expected)
+
+  def test_solution_in_reverse_order(self):
+    numbers_to_sort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 1]
+    expected = [10, 9, 8, 7, 6, 5, 4, 3, 3, 2, 1, 1]
+    actual = solution_in_reverse_order(numbers_to_sort)
 
     self.assertEqual(actual, expected)
 
