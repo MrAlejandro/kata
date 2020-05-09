@@ -9,7 +9,6 @@ def tail_quick_sort(array, first, last):
   while first < last:
     pivot = partition(array, first, last)
     if pivot == -1:
-      print('skipped')
       break
 
     tail_quick_sort(array, first, pivot-1)
@@ -18,7 +17,6 @@ def tail_quick_sort(array, first, last):
 def partition(array, first, last):
   if (last - first) <= (2 ** 6):
     insertion_sort(array, first, last)
-    print('boom')
     return -1
 
   pivot = array[last]
